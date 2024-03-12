@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,6 +35,12 @@ class Inicio : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        var view = inflater.inflate(R.layout.fragment_indice_m_c, container, false)
+
+        val irInicio = view.findViewById<Button>(R.id.Irinicio)
+        irInicio.setOnClickListener {
+            (activity as MainActivity).remplazafrag(Inicio())
+        }
         return inflater.inflate(R.layout.fragment_inicio, container, false)
     }
 
